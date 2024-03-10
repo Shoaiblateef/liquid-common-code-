@@ -1,0 +1,45 @@
+{%- when 'heading' -%}
+  <h2 
+    class="image-with-text__heading  inline-richtext {{}} {{ block.settings.heading_size }}"
+    style="--heading-font-size:{{ block.settings.font_size }}px"
+    {{ block.shopify_attributes }}
+  >
+    {{ block.settings.heading }}
+  </h2>
+
+
+/* css */
+
+
+.pi-page-width .image-with-text__heading {
+color: #222222;
+font-size: var( --heading-font-size );
+font-weight: 400;
+text-transform: uppercase;
+line-height: 40px;
+font-family: Kaushan Script;
+}
+
+/* schema */
+
+"blocks": [
+{
+"type": "heading",
+"name": "t:sections.image-with-text.blocks.heading.name",
+"limit": 1,
+"settings": [
+{
+"type": "inline_richtext",
+"id": "heading",
+"default": "Image with text",
+"label": "t:sections.image-with-text.blocks.heading.settings.heading.label"
+},
+{
+"type": "range",
+"id": "font_size",
+"min": 12,
+"max": 24,
+"step": 2,
+"default": 16,
+"label": "Font Size" 
+},
